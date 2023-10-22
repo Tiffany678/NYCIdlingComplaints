@@ -23,7 +23,7 @@ namespace IdlingComplaints.Tests.PasswordReset
             base.PasswordResetModelSetUp(true);
 
             Driver.Manage().Window.Position = new Point(-2000, 0);
-            EmailInput = "TTseng@dep.nyc.gov";
+            EmailInput = "";
             ClickResetButton();
             var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
             wait.Until(d => d.FindElement(By.CssSelector("input[formcontrolname = 'securityanswer']")));

@@ -78,7 +78,7 @@ namespace IdlingComplaints.Tests.Register
         {
             FirstNameControl.SendKeysWithDelay("Registered", SLEEP_TIMER);
             LastNameControl.SendKeysWithDelay("User", SLEEP_TIMER);
-            EmailControl.SendKeysWithDelay("TTseng@dep.nyc.gov", SLEEP_TIMER);
+            EmailControl.SendKeysWithDelay("", SLEEP_TIMER);
             PasswordControl.SendKeysWithDelay("Testing@1234", SLEEP_TIMER);
             ConfirmPasswordControl.SendKeysWithDelay("Testing@1234", SLEEP_TIMER);
             SelectSecurityQuestion(1);

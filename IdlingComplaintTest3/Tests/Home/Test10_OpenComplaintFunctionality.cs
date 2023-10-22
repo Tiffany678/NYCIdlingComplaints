@@ -22,7 +22,7 @@ namespace IdlingComplaints.Tests.Home
         [SetUp]
         public void SetUp()
         {
-            base.HomeModelSetUp("ttseng@dep.nyc.gov", "Testing1#", false);
+            base.HomeModelSetUp("", "Testing1#", false);
         }
 
         [TearDown]

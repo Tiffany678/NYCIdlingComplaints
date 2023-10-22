@@ -67,7 +67,7 @@ namespace IdlingComplaints.Tests.PasswordReset
         [Test, Category("Required Field Missing - Error Label Displayed")]
         public void RequiredInvalidEmail()
         {
-            EmailControl.SendKeysWithDelay("TTseng", 0);
+            EmailControl.SendKeysWithDelay("", 0);
             ClickResetButton();
             //var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
             //wait.Until(d => d.FindElement(By.TagName("simple-snack-bar")));

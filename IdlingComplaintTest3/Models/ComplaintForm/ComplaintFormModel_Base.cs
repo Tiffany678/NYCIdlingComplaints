@@ -14,7 +14,7 @@ namespace IdlingComplaints.Models.ComplaintForm
     {
         public void ComplaintFormModelSetUp(bool isHeadless)
         {
-            base.HomeModelSetUp("TTseng@dep.nyc.gov", "Testing1#", isHeadless);
+            base.HomeModelSetUp("", "Testing1#", isHeadless);
             ClickNewComplaintButton();
             Driver.WaitUntilElementFound(By.TagName("mat-radio-button"), 10);
             Driver.WaitUntilElementIsNoLongerFound(By.CssSelector("div[dir = 'ltr']"), 20);
