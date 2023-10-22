@@ -9,8 +9,8 @@ namespace IdlingComplaints.Models.Login
     {
         public void LoginModelSetUp(bool isHeadless)
         {
-            if (isHeadless) Driver = CreateHeadlessDriver("chrome");
-            else Driver = CreateStandardDriver("chrome");
+            if (isHeadless) Driver = CreateHeadlessDriver("edge");
+            else Driver = CreateStandardDriver("edge");
             Driver.Navigate().GoToUrl("https://nycidling-dev.azurewebsites.net/login");
             // Driver.Manage().Window.Size = new Size(1920, 1200);
             Driver.Manage().Window.Maximize();
