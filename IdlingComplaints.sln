@@ -17,7 +17,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{61C20B69-7A88-4436-B961-66CB5CDD04A5}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\Selenium\NUnit.png = ..\..\..\Desktop\Selenium\NUnit.png
+		..\..\..\Desktop\Selenium\Report.png = ..\..\..\Desktop\Selenium\Report.png
 		..\..\..\Desktop\Structure.png = ..\..\..\Desktop\Structure.png
+		..\..\..\Desktop\Selenium\Selenium.png = ..\..\..\Desktop\Selenium\Selenium.png
+		..\..\..\Desktop\Selenium\TestCode.png = ..\..\..\Desktop\Selenium\TestCode.png
+		..\..\..\Desktop\Selenium\VS.png = ..\..\..\Desktop\Selenium\VS.png
+		..\..\..\Desktop\Selenium\WebDriver.png = ..\..\..\Desktop\Selenium\WebDriver.png
 	EndProjectSection
 EndProject
 Global
@@ -37,6 +43,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{61C20B69-7A88-4436-B961-66CB5CDD04A5} = {4F6FE7CD-A48F-43D4-80A3-4A7E3EF6DC7B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E37121EC-6321-4C72-9326-53AF17CF8914}

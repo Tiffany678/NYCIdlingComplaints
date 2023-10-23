@@ -56,7 +56,7 @@ internal class Test10_LoginFunctionality : LoginModel
     public void LoginValidEmailAndInvalidPassword()
     {
         //locate login field
-        EmailControl.SendKeysWithDelay("ttseng@dep.nyc.gov", SLEEP_TIMER);
+        EmailControl.SendKeysWithDelay("", SLEEP_TIMER);
         PasswordControl.SendKeysWithDelay(RegistrationUtilities.GenerateRandomString(), SLEEP_TIMER);
         ClickLoginButton();
 
