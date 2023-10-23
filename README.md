@@ -21,7 +21,7 @@ In this project, We created an automated user interface (UI) testing script to t
 	* Unit-Testing framework for all .NET languages
 	* NUnit provides built-in support for generating HTML reports.
 	* Below image is the our project's test report
-	<img height="500" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/READMEImages/TestCode.png" alt="Get request" width="650"/>
+	<img height="250" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/READMEImages/Report.png" alt="Get request" width="325"/>
 
 
 ### Project Folder Structure Map
