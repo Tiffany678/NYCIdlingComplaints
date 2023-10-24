@@ -26,7 +26,7 @@ In this project, We created an automated user interface (UI) testing script to t
 
 ### Our Project Folder Structure Map
 
-  <img height="100" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/READMEImages/Structure.png" alt="Get request" width="500"/>
+  <img height="750" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/READMEImages/Structure.png" alt="Get request" width="600"/>
 
 
 
