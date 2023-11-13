@@ -17,7 +17,7 @@ Let's add a some dependencies to our project to execute the unit test case. They
 * NUnit
 	* NUnit provides built-in support for generating HTML reports.
 	* The below image shows the NUnite generated test report for the web application.
-	<img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/images/Report.png" alt="Get request" width="400"/>
+	<img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/images/ReadmeImage/Report.png" alt="Get request" width="400"/>
 
 
 ## 2.1. Additional Methods
@@ -48,13 +48,12 @@ To initialize the web driver, we can create a method for set up the web driver.
     ```
 
 
-
 ## 3. Page Object Pattern
 
 Before we start writing our first-page object, it’s good to have a clear understanding of the pattern – as it should allow us to emulate a user’s interaction with our application.
 
 * Our Project Folder Structure Map
-    <img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/images/WebDriver_Initialize.png" alt="Get request" width="400"/>	
+    <img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/images/ReadmeImage/WebDriver_Initialize.png" alt="Get request" width="400"/>	
 
 * Let’s go ahead and <b>create our page object</b> – in this case, our login page:
 	``` 
