@@ -1,32 +1,108 @@
-# Overview of My Automation Testing Project with C# and Selenium
+# 1. Introduction
+
+In this Idling Complaints web application, We will build a selenium automation testing project with C#.NET by following the Page Object pattern.
+Please note that all unit test cases are not runnable, due to the removal of sensitive information, including the navigation links, login information and so on. It is only for the demostraion of project structure and the Page Object Pattern purpose.
 
 
-In this project, We created an automated user interface (UI) testing script to test against DEP's Idling Complaints website. (Due to the update of application and the deletion of sensitive information, some functions may not working properly.)
+## 2. Tools for Automated UI Testing
 
-## Tools for Automated UI Testing
+Let's add a some dependencies to our project to execute the unit test case. They can be installed with NuGet Package Manager. 
 
+*<b> Selenium WebDriver</b>
+	* Selenium WebDriver interacts with web elements.
 
-* Selenium WebDriver
-	* Web framework allows test executes on variouse browsers, like Chrome, Edge, and Firefox.
-	* Below image shown how to setup Selenium web Driver 
-		<img height="500" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/READMEImages/WebDriver.png" alt="Get request" width="650"/>
+*<b> Browser Drivers</b>
+	* Download the appropriate browser drivers for the browsers you intend to test, such as ChromeDriver for Google Chrome,GeckoDriver for Mozilla Firefox, etc
 
-
-* Microsoft Visual Studio 2022
-	* Integrated Development Environment (IDE) for .NET and C# development on Windows.
-		<img height="500" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/READMEImages/TestCode.png" alt="Get request" width="650"/>
-
-
-* NUnit
-	* Unit-Testing framework for all .NET languages
+*<b> NUnit</b>
 	* NUnit provides built-in support for generating HTML reports.
-	* Below image show the test result for our department application
-		<img height="100" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/READMEImages/Report.png" alt="Get request" width="500"/>
+	* The below image shows the NUnite generated test report for the web application.
+	<img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/images/Report.png" alt="Get request" width="400"/>
 
 
-### Our Project Folder Structure Map
+## 2.1. Additional Methods
 
-  <img height="750" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/READMEImages/Structure.png" alt="Get request" width="600"/>
+To initialize the web driver, we can create a method for set up the web driver.
+<img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/images/WebDriver_Initialize.png" alt="Get request" width="400"/>
 
 
+## 3. Page Object Pattern
 
+Before we start writing our first-page object, it’s good to have a clear understanding of the pattern – as it should allow us to emulate a user’s interaction with our application.
+
+* Our Project Folder Structure Map
+	```
+	 protected IWebDriver CreateHeadlessDriver(string browserName)
+     {
+          string headless = "--headless=new";
+          switch (browserName.ToLowerInvariant())
+          {
+              case "chrome":
+                     var chromeOptions = new ChromeOptions();
+                     chromeOptions.AddArguments(headless);
+                     return new ChromeDriver(chromeOptions);
+              case "firefox":
+                     var firefoxOptions = new FirefoxOptions();
+                     firefoxOptions.AddArguments(headless);
+                     return new FirefoxDriver(firefoxOptions);
+              case "edge":
+                     var edgeOptions = new EdgeOptions();
+                     edgeOptions.AddArguments(headless);
+                     return new EdgeDriver(edgeOptions);
+               default:
+                    throw new Exception("Provided browser is not supported.");
+            }
+       }
+	```
+
+* Let’s go ahead and <b>create our page object</b> – in this case, our login page:
+	``` 
+      namespace IdlingComplaints.Models.Login
+      {
+         internal class LoginModel : BaseModel
+         {
+            public IWebElement EmailControl => Driver.FindElement(By.Name("email"));
+             // ...
+            public string EmailInput
+            {
+                get
+                {
+                    return EmailControl.GetAttribute("value");
+                }
+                set
+                {
+                    EmailControl.SendKeys(value);
+                }
+             }
+             // ...
+         }
+      }
+	```
+
+* Let’s write a quick test, where we simply test the login functionality.
+    ```
+    private readonly int SLEEP_TIMER = 2000;
+    private readonly string registered_EmailAddress = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\Files\\Text\\Registered_EmailAddress.txt";
+
+    [Test, Category("Successful Login - Error Label Hidden")]
+    public void LoginValidEmailAndPassword()
+    {
+        string[] lines = File.ReadAllLines(registered_EmailAddress);
+        int userRowIndex = random.Next(0, lines.Length - 1);
+
+        string email = RegistrationUtilities.RetrieveRecordValue(registered_EmailAddress, userRowIndex, 0);
+        string password = RegistrationUtilities.RetrieveRecordValue(registered_EmailAddress, userRowIndex, 1);
+
+        EmailControl.SendKeysWithDelay(email, SLEEP_TIMER);
+        PasswordControl.SendKeysWithDelay(password, SLEEP_TIMER);
+        ClickLoginButton();
+
+        Driver.WaitUntilElementFound(By.CssSelector("button[routerlink='idlingcomplaint/new']"), 20);
+      
+        Driver.WaitUntilElementIsNoLongerFound(By.CssSelector("div[dir = 'ltr']"), 20);
+    }
+    ```
+
+## 4. Consclusion
+
+In this quick tutorial, we focused on improving our usage of Selenium/WebDriver with the help of the Page-Object Pattern. We went through different examples and implementations to see the practical ways of utilizing the pattern to interact with our site.
