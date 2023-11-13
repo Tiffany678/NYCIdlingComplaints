@@ -1,6 +1,6 @@
 # 1. Introduction
 
-In this Idling Complaints web application, We will build a selenium automation testing project with C#.NET by following the Page Object pattern.
+In this Idling Complaints web application, We will build a selenium automation testing project with C#.NET by following the Page Object pattern.<br />
 Please note that all unit test cases are not runnable, due to the removal of sensitive information, including the navigation links, login information and so on. It is only for the demostraion of project structure and the Page Object Pattern purpose.
 
 
@@ -8,13 +8,13 @@ Please note that all unit test cases are not runnable, due to the removal of sen
 
 Let's add a some dependencies to our project to execute the unit test case. They can be installed with NuGet Package Manager. 
 
-*<b> Selenium WebDriver</b>
+* Selenium WebDriver
 	* Selenium WebDriver interacts with web elements.
 
-*<b> Browser Drivers</b>
+* Browser Drivers
 	* Download the appropriate browser drivers for the browsers you intend to test, such as ChromeDriver for Google Chrome,GeckoDriver for Mozilla Firefox, etc
 
-*<b> NUnit</b>
+* NUnit
 	* NUnit provides built-in support for generating HTML reports.
 	* The below image shows the NUnite generated test report for the web application.
 	<img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/images/Report.png" alt="Get request" width="400"/>
@@ -23,7 +23,30 @@ Let's add a some dependencies to our project to execute the unit test case. They
 ## 2.1. Additional Methods
 
 To initialize the web driver, we can create a method for set up the web driver.
-<img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/images/WebDriver_Initialize.png" alt="Get request" width="400"/>
+    ```
+	     protected IWebDriver CreateHeadlessDriver(string browserName)
+         {
+              string headless = "--headless=new";
+              switch (browserName.ToLowerInvariant())
+              {
+                  case "chrome":
+                         var chromeOptions = new ChromeOptions();
+                         chromeOptions.AddArguments(headless);
+                         return new ChromeDriver(chromeOptions);
+                  case "firefox":
+                         var firefoxOptions = new FirefoxOptions();
+                         firefoxOptions.AddArguments(headless);
+                         return new FirefoxDriver(firefoxOptions);
+                  case "edge":
+                         var edgeOptions = new EdgeOptions();
+                         edgeOptions.AddArguments(headless);
+                         return new EdgeDriver(edgeOptions);
+                   default:
+                        throw new Exception("Provided browser is not supported.");
+                }
+           }
+    ```
+
 
 
 ## 3. Page Object Pattern
@@ -31,29 +54,7 @@ To initialize the web driver, we can create a method for set up the web driver.
 Before we start writing our first-page object, it’s good to have a clear understanding of the pattern – as it should allow us to emulate a user’s interaction with our application.
 
 * Our Project Folder Structure Map
-	```
-	 protected IWebDriver CreateHeadlessDriver(string browserName)
-     {
-          string headless = "--headless=new";
-          switch (browserName.ToLowerInvariant())
-          {
-              case "chrome":
-                     var chromeOptions = new ChromeOptions();
-                     chromeOptions.AddArguments(headless);
-                     return new ChromeDriver(chromeOptions);
-              case "firefox":
-                     var firefoxOptions = new FirefoxOptions();
-                     firefoxOptions.AddArguments(headless);
-                     return new FirefoxDriver(firefoxOptions);
-              case "edge":
-                     var edgeOptions = new EdgeOptions();
-                     edgeOptions.AddArguments(headless);
-                     return new EdgeDriver(edgeOptions);
-               default:
-                    throw new Exception("Provided browser is not supported.");
-            }
-       }
-	```
+    <img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/images/WebDriver_Initialize.png" alt="Get request" width="400"/>	
 
 * Let’s go ahead and <b>create our page object</b> – in this case, our login page:
 	``` 
