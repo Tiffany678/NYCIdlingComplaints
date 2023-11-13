@@ -17,7 +17,7 @@ Let's add a some dependencies to our project to execute the unit test case. They
 * NUnit
 	* NUnit provides built-in support for generating HTML reports.
 	* The below image shows the NUnite generated test report for the web application.
-	<img height="500" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/Images/ReadmeImage/Report.png" alt="Get request" width="200"/>
+	<img height="180" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/Images/ReadmeImage/Report.png" alt="Get request" width="500"/>
 
 
 ## 2.1. Additional Methods
