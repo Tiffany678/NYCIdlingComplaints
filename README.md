@@ -17,13 +17,14 @@ Let's add a some dependencies to our project to execute the unit test case. They
 * NUnit
 	* NUnit provides built-in support for generating HTML reports.
 	* The below image shows the NUnite generated test report for the web application.
-	<img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/Images/ReadmeImage/Report.png" alt="Get request" width="400"/>
+	<img height="500" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/Images/ReadmeImage/Report.png" alt="Get request" width="200"/>
 
 
 ## 2.1. Additional Methods
 
-To initialize the web driver, we can create a method for set up the web driver.
-    ```
+* To initialize the web driver, we can create a method for the driver mode, like stander mode or headless mode.
+
+	``` 
       protected IWebDriver CreateHeadlessDriver(string browserName)
          {
               string headless = "--headless=new";
@@ -45,7 +46,7 @@ To initialize the web driver, we can create a method for set up the web driver.
                         throw new Exception("Provided browser is not supported.");
                 }
       }
-    ```
+	```
 
 
 ## 3. Page Object Pattern
