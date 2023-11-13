@@ -58,7 +58,5 @@ namespace SeleniumUtilities.Base
                     throw new Exception("Provided browser is not supported.");
             }
         }
-
-
     }
 }

@@ -10,8 +10,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Files\READMEImages\**" />
     <Compile Remove="Tests\Register\logs\**" />
+    <EmbeddedResource Remove="Files\READMEImages\**" />
     <EmbeddedResource Remove="Tests\Register\logs\**" />
+    <None Remove="Files\READMEImages\**" />
     <None Remove="Tests\Register\logs\**" />
   </ItemGroup>
 
