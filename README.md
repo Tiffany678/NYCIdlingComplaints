@@ -1,12 +1,12 @@
 # 1. Introduction
 
-In this Idling Complaints web application, We will build a selenium automation testing project with C#.NET by following the Page Object pattern.<br />
-Please note that all unit test cases are not runnable, due to the removal of sensitive information, including the navigation links, login information and so on. It is only for the demostraion of project structure and the Page Object Pattern purpose.
+	In this Idling Complaint Form testing project, I will demostrate how to build a selenium automation testing with C#.NET by following the Page Object pattern.<br />
+	Please note that the test cases from this project are not runnable, due to the removal of sensitive information, including the navigation links, login information and so on. It is only for introducing of the project structure and Page Object Pattern.
 
 
 ## 2. Tools for Automated UI Testing
 
-Let's add a some dependencies to our project to execute the unit test case. They can be installed with NuGet Package Manager. 
+Let's add a some dependencies to our project to execute the unit test. They can be installed with NuGet Package Manager. 
 
 * Selenium WebDriver
 	* Selenium WebDriver interacts with web elements.
@@ -51,12 +51,12 @@ Let's add a some dependencies to our project to execute the unit test case. They
 
 ## 3. Page Object Pattern
 
-Before we start writing our first-page object, it’s good to have a clear understanding of the pattern – as it should allow us to emulate a user’s interaction with our application.
+Before we start writing our first-page object, itâ€™s good to have a clear understanding of the pattern â€“ as it should allow us to emulate a userâ€™s interaction with our application.
 
 * Our Project Folder Structure Map
     <img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/Images/ReadmeImage/WebDriver_Initialize.png" alt="Get request" width="400"/>	
 
-* Let’s go ahead and <b>create our page object</b> – in this case, our login page:
+* Letâ€™s go ahead and <b>create our page object</b> â€“ in this case, our login page:
 	``` 
       namespace IdlingComplaints.Models.Login
       {
@@ -80,7 +80,7 @@ Before we start writing our first-page object, it’s good to have a clear underst
       }
 	```
 
-* Let’s write a quick test, where we simply test the login functionality.
+* Letâ€™s write a quick test, where we simply test the login functionality.
     ```
     private readonly int SLEEP_TIMER = 2000;
     private readonly string registered_EmailAddress = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName + "\\Files\\Text\\Registered_EmailAddress.txt";
