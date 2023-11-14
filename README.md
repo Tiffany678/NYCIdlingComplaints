@@ -1,7 +1,7 @@
 # 1. Introduction
 
-	In this Idling Complaint Form testing project, I will demostrate how to build a selenium automation testing with C#.NET by following the Page Object pattern.<br />
-	Please note that the test cases from this project are not runnable, due to the removal of sensitive information, including the navigation links, login information and so on. It is only for introducing of the project structure and Page Object Pattern.
+In this Idling Complaint Form testing project, I will demostrate how to build a selenium automation testing with C#.NET by following the Page Object pattern.<br />
+Please note that the test cases from this project are not runnable, due to the removal of sensitive information, including the navigation links, login information and so on. It is only for introducing of the project structure and Page Object Pattern.
 
 
 ## 2. Tools for Automated UI Testing
