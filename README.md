@@ -17,7 +17,7 @@ Let's add a some dependencies to our project to execute the unit test. They can 
 * NUnit
 	* NUnit provides built-in support for generating HTML reports.
 	* The below image shows the NUnite generated test report for the web application.
-	<img height="500" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/Images/ReadmeImage/Report.png" alt="Get request" width="600"/>
+	<img height="180" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/Images/ReadmeImage/Report.png" alt="Get request" width="500"/>
 
 
 ## 2.1. Additional Methods
@@ -54,7 +54,7 @@ Let's add a some dependencies to our project to execute the unit test. They can 
 Before we start writing our first-page object, it’s good to have a clear understanding of the pattern – as it should allow us to emulate a user’s interaction with our application.
 
 * Our Project Folder Structure Map <br/>
-    <img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/Images/ReadmeImage/ProjectStructure.png" alt="Get request" width="400"/>	
+    <img height="550" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/Images/ReadmeImage/ProjectStructure.png" alt="Get request" width="650"/>	
 
 * Let’s go ahead and <b>create our page object</b> – in this case, our login page:
 	``` 
