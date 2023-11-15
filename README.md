@@ -53,8 +53,8 @@ Let's add a some dependencies to our project to execute the unit test. They can 
 
 Before we start writing our first-page object, it’s good to have a clear understanding of the pattern – as it should allow us to emulate a user’s interaction with our application.
 
-* Our Project Folder Structure Map
-    <img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/Images/ReadmeImage/WebDriver_Initialize.png" alt="Get request" width="400"/>	
+* Our Project Folder Structure Map <br/>
+    <img height="450" src="https://github.com/Tiffany678/NYCIdlingComplaints/blob/master/IdlingComplaintTest3/Files/Images/ReadmeImage/ProjectStructure.png" alt="Get request" width="400"/>	
 
 * Let’s go ahead and <b>create our page object</b> – in this case, our login page:
 	``` 
